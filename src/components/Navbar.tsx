@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { Button } from "@/components/ui/button";
-import { LogOut, LayoutDashboard, Menu, X, UserCircle } from "lucide-react";
+import { LogOut, LayoutDashboard, Menu, X, UserCircle, MessageCircle } from "lucide-react";
 import { useState } from "react";
 
 const Navbar = () => {
@@ -35,6 +35,9 @@ const Navbar = () => {
               <Button variant="ghost" size="sm" onClick={() => navigate(dashboardPath)}>
                 <LayoutDashboard className="mr-2 h-4 w-4" /> Dashboard
               </Button>
+              <Button variant="ghost" size="sm" onClick={() => navigate("/chat")}>
+                <MessageCircle className="mr-2 h-4 w-4" /> Messages
+              </Button>
               <Button variant="ghost" size="sm" onClick={() => navigate("/profile")}>
                 <UserCircle className="mr-2 h-4 w-4" /> Profile
               </Button>
@@ -65,6 +68,9 @@ const Navbar = () => {
               <>
                 <Button variant="ghost" size="sm" className="justify-start" onClick={() => { navigate(dashboardPath); setMobileOpen(false); }}>
                   <LayoutDashboard className="mr-2 h-4 w-4" /> Dashboard
+                </Button>
+                <Button variant="ghost" size="sm" className="justify-start" onClick={() => { navigate("/chat"); setMobileOpen(false); }}>
+                  <MessageCircle className="mr-2 h-4 w-4" /> Messages
                 </Button>
                 <Button variant="ghost" size="sm" className="justify-start" onClick={() => { navigate("/profile"); setMobileOpen(false); }}>
                   <UserCircle className="mr-2 h-4 w-4" /> Profile
